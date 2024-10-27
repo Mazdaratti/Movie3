@@ -78,8 +78,8 @@ class MovieInfoDownloader:
 
             return {data.get('Title'): {
                     'Title': data.get('Title'),
-                    'Year': data.get('Year'),
-                    'Rating': data.get('imdbRating'),
+                    'Year': int(data.get('Year')),
+                    'Rating': float(data.get('imdbRating')),
                     'Poster': data.get('Poster'),
                     'IMDB Link': f"https://www.imdb.com/title/{data.get('imdbID')}/",
                     'Notes': ""}
