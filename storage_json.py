@@ -33,13 +33,16 @@ class StorageJson(IStorage):
         """
         if not os.path.exists(self._database):
             print(f"File '{self._database}' not found. Opening default movies data.")
-            self._database = "data/default.json"
+            self._database = "default.json"
 
         try:
             with open(self._database, "r", encoding="utf-8") as file:
                 return json.load(file)
         except json.JSONDecodeError:
             print("Error: The JSON file could not be decoded. Please check the file format.")
+            return {}
+        except FileNotFoundError:
+            print(f"Error: File '{self._database}' not found. Returning empty movie list.")
             return {}
 
     def save_movies(self, dict_object: dict):
@@ -58,5 +61,3 @@ class StorageJson(IStorage):
         except IOError as e:
             print(f"Error: Unable to write to the file '{self._database}'. Details: {e}")
 
-    def _create_default_movies_file(self):
-        pass
