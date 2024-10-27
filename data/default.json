@@ -1,0 +1,252 @@
+{
+    "The Shawshank Redemption": {
+        "The Shawshank Redemption": {
+            "Title": "The Shawshank Redemption",
+            "Year": 1994,
+            "Rating": 9.3,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0111161/",
+            "Notes": ""
+        }
+    },
+    "The Godfather": {
+        "The Godfather": {
+            "Title": "The Godfather",
+            "Year": 1972,
+            "Rating": 9.2,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0068646/",
+            "Notes": ""
+        }
+    },
+    "The Dark Knight": {
+        "The Dark Knight": {
+            "Title": "The Dark Knight",
+            "Year": 2008,
+            "Rating": 9.0,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0468569/",
+            "Notes": ""
+        }
+    },
+    "The Godfather Part II": {
+        "The Godfather Part II": {
+            "Title": "The Godfather Part II",
+            "Year": 1974,
+            "Rating": 9.0,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNzc1OWY5MjktZDllMi00ZDEzLWEwMGItYjk1YmRhYjBjNTVlXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0071562/",
+            "Notes": ""
+        }
+    },
+    "12 Angry Men": {
+        "12 Angry Men": {
+            "Title": "12 Angry Men",
+            "Year": 1957,
+            "Rating": 9.0,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYjE4NzdmOTYtYjc5Yi00YzBiLWEzNDEtNTgxZGQ2MWVkN2NiXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0050083/",
+            "Notes": ""
+        }
+    },
+    "The Lord of the Rings: The Return of the King": {
+        "The Lord of the Rings: The Return of the King": {
+            "Title": "The Lord of the Rings: The Return of the King",
+            "Year": 2003,
+            "Rating": 9.0,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0167260/",
+            "Notes": ""
+        }
+    },
+    "Schindler's List": {
+        "Schindler's List": {
+            "Title": "Schindler's List",
+            "Year": 1993,
+            "Rating": 9.0,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNjM1ZDQxYWUtMzQyZS00MTE1LWJmZGYtNGUyNTdlYjM3ZmVmXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0108052/",
+            "Notes": ""
+        }
+    },
+    "Pulp Fiction": {
+        "Pulp Fiction": {
+            "Title": "Pulp Fiction",
+            "Year": 1994,
+            "Rating": 8.9,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0110912/",
+            "Notes": ""
+        }
+    },
+    "The Lord of the Rings: The Fellowship of the Ring": {
+        "The Lord of the Rings: The Fellowship of the Ring": {
+            "Title": "The Lord of the Rings: The Fellowship of the Ring",
+            "Year": 2001,
+            "Rating": 8.9,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0120737/",
+            "Notes": ""
+        }
+    },
+    "The Good, the Bad and the Ugly": {
+        "The Good, the Bad and the Ugly": {
+            "Title": "The Good, the Bad and the Ugly",
+            "Year": 1966,
+            "Rating": 8.8,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMWM5ZjQxM2YtNDlmYi00ZDNhLWI4MWUtN2VkYjBlMTY1ZTkwXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0060196/",
+            "Notes": ""
+        }
+    },
+    "Forrest Gump": {
+        "Forrest Gump": {
+            "Title": "Forrest Gump",
+            "Year": 1994,
+            "Rating": 8.8,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNDYwNzVjMTItZmU5YS00YjQ5LTljYjgtMjY2NDVmYWMyNWFmXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0109830/",
+            "Notes": ""
+        }
+    },
+    "The Lord of the Rings: The Two Towers": {
+        "The Lord of the Rings: The Two Towers": {
+            "Title": "The Lord of the Rings: The Two Towers",
+            "Year": 2002,
+            "Rating": 8.8,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMGQxMDdiOWUtYjc1Ni00YzM1LWE2NjMtZTg3Y2JkMjEzMTJjXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0167261/",
+            "Notes": ""
+        }
+    },
+    "Fight Club": {
+        "Fight Club": {
+            "Title": "Fight Club",
+            "Year": 1999,
+            "Rating": 8.8,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0137523/",
+            "Notes": ""
+        }
+    },
+    "Inception": {
+        "Inception": {
+            "Title": "Inception",
+            "Year": 2010,
+            "Rating": 8.8,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt1375666/",
+            "Notes": ""
+        }
+    },
+    "Star Wars: Episode V - The Empire Strikes Back": {
+        "Star Wars: Episode V - The Empire Strikes Back": {
+            "Title": "Star Wars: Episode V - The Empire Strikes Back",
+            "Year": 1980,
+            "Rating": 8.7,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0080684/",
+            "Notes": ""
+        }
+    },
+    "The Matrix": {
+        "The Matrix": {
+            "Title": "The Matrix",
+            "Year": 1999,
+            "Rating": 8.7,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0133093/",
+            "Notes": ""
+        }
+    },
+    "Goodfellas": {
+        "Goodfellas": {
+            "Title": "Goodfellas",
+            "Year": 1990,
+            "Rating": 8.7,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BN2E5NzI2ZGMtY2VjNi00YTRjLWI1MDUtZGY5OWU1MWJjZjRjXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0099685/",
+            "Notes": ""
+        }
+    },
+    "One Flew Over the Cuckoo's Nest": {
+        "One Flew Over the Cuckoo's Nest": {
+            "Title": "One Flew Over the Cuckoo's Nest",
+            "Year": 1975,
+            "Rating": 8.7,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYjBkMjgzMzYtNzRiMS00NDc3LWE4YTUtZjYxYjZhNjNhYzhhXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0073486/",
+            "Notes": ""
+        }
+    },
+    "Interstellar": {
+        "Interstellar": {
+            "Title": "Interstellar",
+            "Year": 2014,
+            "Rating": 8.7,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0816692/",
+            "Notes": ""
+        }
+    },
+    "Se7en": {
+        "Se7en": {
+            "Title": "Se7en",
+            "Year": 1995,
+            "Rating": 8.6,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BY2IzNzMxZjctZjUxZi00YzAxLTk3ZjMtODFjODdhMDU5NDM1XkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0114369/",
+            "Notes": ""
+        }
+    },
+    "It's a Wonderful Life": {
+        "It's a Wonderful Life": {
+            "Title": "It's a Wonderful Life",
+            "Year": 1946,
+            "Rating": 8.6,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMDM4OWFhYjEtNTE5Yy00NjcyLTg5N2UtZDQwNDZlYjlmNDU5XkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0038650/",
+            "Notes": ""
+        }
+    },
+    "Seven Samurai": {
+        "Seven Samurai": {
+            "Title": "Seven Samurai",
+            "Year": 1954,
+            "Rating": 8.6,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BZjliMWExOTMtZDQ3ZS00NWU3LWIyN2EtMjllNzk3ZTNlYzg4XkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0047478/",
+            "Notes": ""
+        }
+    },
+    "The Silence of the Lambs": {
+        "The Silence of the Lambs": {
+            "Title": "The Silence of the Lambs",
+            "Year": 1991,
+            "Rating": 8.6,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0102926/",
+            "Notes": ""
+        }
+    },
+    "Saving Private Ryan": {
+        "Saving Private Ryan": {
+            "Title": "Saving Private Ryan",
+            "Year": 1998,
+            "Rating": 8.6,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BZGZhZGQ1ZWUtZTZjYS00MDJhLWFkYjctN2ZlYjE5NWYwZDM2XkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0120815/",
+            "Notes": ""
+        }
+    },
+    "City of God": {
+        "City of God": {
+            "Title": "City of God",
+            "Year": 2002,
+            "Rating": 8.6,
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYjY4NGI5OTUtY2ZlZS00Zjk4LTk5N2MtN2JmYWVjNGNmMGRlXkEyXkFqcGc@._V1_SX300.jpg",
+            "IMDB Link": "https://www.imdb.com/title/tt0317248/",
+            "Notes": ""
+        }
+    }
+}
