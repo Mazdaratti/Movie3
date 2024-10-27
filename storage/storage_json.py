@@ -17,6 +17,8 @@ class StorageJson(IStorage):
             filepath (str): The path to the JSON file.
         """
         self._database = filepath
+        if not os.path.exists(self._database):
+            self.save_movies({})
 
     def get_movies(self) -> dict:
         """
@@ -31,9 +33,6 @@ class StorageJson(IStorage):
         Raises:
             json.JSONDecodeError: If the JSON file has invalid format.
         """
-        if not os.path.exists(self._database):
-            print(f"File '{self._database}' not found. Opening default movies data.")
-            self._database = "default.json"
 
         try:
             with open(self._database, "r", encoding="utf-8") as file:
@@ -60,4 +59,3 @@ class StorageJson(IStorage):
                 json.dump(dict_object, file, ensure_ascii=False, indent=4)
         except IOError as e:
             print(f"Error: Unable to write to the file '{self._database}'. Details: {e}")
-
