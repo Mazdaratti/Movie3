@@ -5,6 +5,16 @@ from storage.storage_json import StorageJson
 
 @pytest.fixture
 def setup_json_file(tmp_path):
+    """
+    Pytest fixture to set up a temporary JSON file for testing.
+    Initializes the StorageJson instance and removes the test file after each test.
+
+    Args:
+        tmp_path (Path): Temporary directory provided by pytest.
+
+    Yields:
+        tuple: StorageJson instance and the path to the test JSON file.
+    """
     json_file = tmp_path / "test_movies.json"
     storage = StorageJson(str(json_file))
     yield storage, json_file
@@ -13,7 +23,13 @@ def setup_json_file(tmp_path):
 
 
 def test_add_movie_json(setup_json_file):
-    """Test adding a movie to JSON storage."""
+    """
+    Test the add_movie method of StorageJson.
+
+    Verifies that the movie is added correctly by checking if:
+    - The title is present in the stored movies.
+    - The rating matches the added data.
+    """
     storage, json_file = setup_json_file
     movie = {"Inception": {"Rating": 8.8, "Year": 2010, "Notes": "Sci-fi classic"}}
     storage.add_movie(movie)
@@ -23,7 +39,14 @@ def test_add_movie_json(setup_json_file):
 
 
 def test_delete_movie_json(setup_json_file):
-    """Test deleting a movie from JSON storage."""
+    """
+    Test the delete_movie method of StorageJson.
+
+    Verifies that the specified movie is removed by:
+    - Adding a movie to the JSON file.
+    - Deleting the movie by title.
+    - Checking that the title is no longer in stored movies.
+    """
     storage, json_file = setup_json_file
     movie = {"Inception": {"Rating": 8.8, "Year": 2010}}
     storage.add_movie(movie)
@@ -33,6 +56,14 @@ def test_delete_movie_json(setup_json_file):
 
 
 def test_update_movie_json(setup_json_file):
+    """
+    Test the update_movie method of StorageJson.
+
+    Verifies that the specified movie is updated by:
+    - Adding a movie to the JSON file.
+    - Updating the movie's notes.
+    - Checking that the updated notes are saved correctly.
+    """
     storage, json_file = setup_json_file
     movie = {"Inception": {"Rating": 8.8, "Year": 2010}}
     storage.add_movie(movie)
@@ -41,24 +72,15 @@ def test_update_movie_json(setup_json_file):
     assert movies["Inception"]["Notes"] == "Updated notes"
 
 
-def test_save_movies(setup_json_file):
-    storage, json_file = setup_json_file
-    movies_to_save = {
-        "Inception": {
-            "Rating": 8.8,
-            "Year": 2010,
-            "Poster": "http://example.com/inception.jpg",
-            "IMDB Link": "http://imdb.com/inception",
-            "Notes": "A mind-bending thriller."
-        }
-    }
-
-    storage.save_movies(movies_to_save)
-    stored_movies = storage.get_movies()
-    assert stored_movies == movies_to_save, "Saved movies do not match the expected output."
-
-
 def test_save_and_get_movies(setup_json_file):
+    """
+    Test the save_movies and get_movies methods of StorageJson.
+
+    Verifies that movies are saved and retrieved accurately by:
+    - Saving a dictionary of movies.
+    - Retrieving the movies from storage.
+    - Asserting that retrieved data matches saved data.
+    """
     storage, json_file = setup_json_file
     movies_to_save = {
         "The Matrix": {
@@ -76,6 +98,13 @@ def test_save_and_get_movies(setup_json_file):
 
 
 def test_invalid_json_format(setup_json_file):
+    """
+    Test handling of invalid JSON format in get_movies.
+
+    Verifies that when the JSON file format is invalid:
+    - The method returns an empty dictionary.
+    - An error message is displayed.
+    """
     storage, json_file = setup_json_file
 
     # Create a malformed JSON file
