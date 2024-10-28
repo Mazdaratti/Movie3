@@ -1,0 +1,110 @@
+/* General page styling */
+body {
+  background: #F5F5F0;
+  color: black;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+.list-movies-title {
+  padding: 20px 0;
+  background: #F5C518;
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Movie grid container */
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Individual movie card styling */
+.movie-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  padding: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for movie cards */
+.movie-grid li:hover {
+  transform: scale(1.05);
+}
+
+/* Movie details alignment */
+.movie {
+  text-align: center;
+  width: 100%;
+}
+
+/* Poster image styling with fixed height */
+.movie-poster {
+  width: 100%;
+  height: 210px;
+  object-fit: cover; /* Ensures all images fit within the fixed height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+/* Title, year, and rating styling */
+.movie-title,
+.movie-year,
+.movie-rating {
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+.movie-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.movie-year {
+  color: #777;
+}
+
+.movie-rating {
+  color: #F5C518;
+}
+
+/* Tooltip styling for movie notes */
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 0.75em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show tooltip on hover */
+.movie-grid li:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
