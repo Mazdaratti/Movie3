@@ -77,7 +77,6 @@ class MovieInfoDownloader:
                 raise APIError(f"Incomplete data received for movie: {title}")
 
             return {data.get('Title'): {
-                    'Title': data.get('Title'),
                     'Year': int(data.get('Year')),
                     'Rating': float(data.get('imdbRating')),
                     'Poster': data.get('Poster'),
