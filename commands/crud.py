@@ -2,7 +2,34 @@ from commands.downloader import MovieInfoDownloader
 
 
 class Crud:
+    """
+        Provides Create, Read, Update, and Delete (CRUD) operations for a movie database.
+
+        This class includes methods to list movies, add new movies, delete existing movies,
+        and update movies with personal notes. It also provides helper functions for input
+        validation and checks if a movie exists in the database.
+
+        Attributes:
+            movies (object): A data source for movie information, implementing methods
+                             like 'get_movies()', 'add_movie()', 'delete_movie()', and 'update_movie()'.
+
+        Methods:
+            list_movies(): Lists all movies in the database with their release years and ratings.
+            get_num(prompt, category): Prompts the user for a numerical value and validates it.
+            is_movie_in_dict(name): Checks if a movie title exists in the database (case-insensitive).
+            get_new_title(): Prompts the user for a new movie title and ensures it is unique.
+            add_movie(): Adds a new movie to the database with a specified title, year, and rating.
+            delete_movie(): Deletes a movie from the database if it exists.
+            update_movie(): Updates a movie with a personal note if it exists in the database.
+    """
     def __init__(self, movies_data):
+        """
+            Initializes the Crud instance with a movie data source.
+
+            Args:
+                movies_data (object): A data source object that has methods to retrieve, add,
+                                          delete, and update movies.
+        """
         self.movies = movies_data
 
     def list_movies(self):

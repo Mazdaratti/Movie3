@@ -4,7 +4,36 @@ import random
 
 
 class Analytics:
+    """
+        Provides analytical tools for a movie database.
+
+        This class includes methods to calculate and display various statistics,
+        randomly select a movie, perform fuzzy searches on movie titles, sort movies
+        by rating or release year, and filter movies based on user-specified criteria.
+
+        Attributes:
+            movies (object): A data source for movie information, typically implementing
+                             a 'get_movies()' method to retrieve a dictionary of movies.
+
+        Methods:
+            show_statistics(): Displays average, median, highest, and lowest ratings.
+            random_movie(): Selects and displays a random movie from the database.
+            fuzzy_search(): Performs a fuzzy search on movie titles based on user input.
+            sort_movies(sort_key, reverse_order): Sorts movies by a specified key.
+            print_movies(sorted_movies): Prints a list of sorted movies.
+            sorted_by_rating(): Sorts and displays movies by rating in descending order.
+            sorted_by_year(): Sorts and displays movies by release year based on user preference.
+            get_valid_input(prompt, category): Prompts user for valid numerical input with validation.
+            filtered_movies(): Filters and displays movies based on minimum rating and year range.
+    """
     def __init__(self, movies_data):
+        """
+            Initializes the Analytics instance with a given movie data source.
+
+            Args:
+                movies_data (object): A data source object that has a 'get_movies()' method
+                                          to retrieve movie data.
+        """
         self.movies = movies_data
 
     def show_statistics(self):
@@ -28,8 +57,10 @@ class Analytics:
         highest_rating = max(ratings)
         lowest_rating = min(ratings)
 
-        best_movies = {title: movie["Rating"] for title, movie in movies.items() if float(movie["Rating"]) == highest_rating}
-        worst_movies = {title: movie["Rating"] for title, movie in movies.items() if float(movie["Rating"]) == lowest_rating}
+        best_movies = {title: movie["Rating"] for title, movie in movies.items()
+                       if float(movie["Rating"]) == highest_rating}
+        worst_movies = {title: movie["Rating"] for title, movie in movies.items()
+                        if float(movie["Rating"]) == lowest_rating}
 
         print(f"\nAverage rating: {average_rating:.1f}")
         print(f"Median rating: {median_rating:.1f}")
