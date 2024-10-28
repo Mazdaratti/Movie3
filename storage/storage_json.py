@@ -5,16 +5,16 @@ from storage.istorage import IStorage
 
 class StorageJson(IStorage):
     """
-    JSON-based implementation of the IStorage interface.
-    Handles loading and saving movie data to and from a JSON file.
+        JSON-based implementation of the IStorage interface.
+        Handles loading and saving movie data to and from a JSON file.
     """
 
     def __init__(self, filepath: str):
         """
-        Initializes the JSON storage with a given file path.
+            Initializes the JSON storage with a specified file path.
 
-        Args:
-            filepath (str): The path to the JSON file.
+            Args:
+                filepath (str): The path to the JSON file.
         """
         self._database = filepath
         if not os.path.exists(self._database):
@@ -22,16 +22,13 @@ class StorageJson(IStorage):
 
     def get_movies(self) -> dict:
         """
-        Loads and returns the movie data from the JSON file.
+            Loads movie data from the JSON file.
 
-        Returns:
-            dict: A dictionary containing movie information.
+            Returns:
+                dict: A dictionary containing movie information.
 
-        If the JSON file is not found, it opens the file with default movies data.
-
-
-        Raises:
-            json.JSONDecodeError: If the JSON file has invalid format.
+            Raises:
+                JSONDecodeError: If the JSON file format is invalid.
         """
 
         try:
