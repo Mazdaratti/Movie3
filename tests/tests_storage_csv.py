@@ -6,7 +6,17 @@ from storage.storage_csv import StorageCsv
 
 @pytest.fixture
 def setup_csv_file(tmp_path):
-    """Fixture to set up a temporary CSV file for testing."""
+    """
+    Pytest fixture to set up a temporary CSV file for testing.
+    Initializes the StorageCsv instance and creates a default movie entry
+    to be used in the test cases.
+
+    Args:
+        tmp_path (Path): Temporary directory provided by pytest.
+
+    Yields:
+        tuple: StorageCsv instance and the path to the test CSV file.
+    """
     csv_file = tmp_path / "test_movies.csv"
     storage = StorageCsv(str(csv_file))
 
@@ -29,22 +39,14 @@ def setup_csv_file(tmp_path):
         os.remove(csv_file)
 
 
-def test_update_movie_csv(setup_csv_file):
-    """Test updating a movie in CSV storage."""
-    storage, csv_file = setup_csv_file
-    movie = {"Inception": {"Year": 2010,
-                           "Rating": 8.8,
-                           "Poster": "https://m.media-amazon.com/images/example.jpg",
-                           "IMDB Link": "https://www.imdb.com/title/tt1375666/",
-                           "Notes": "Sci-fi classic"}}
-    storage.add_movie(movie)
-    storage.update_movie("Inception", "Updated notes")
-    movies = storage.get_movies()
-    assert movies["Inception"]["Notes"] == "Updated notes"
-
-
 def test_add_movie_csv(setup_csv_file):
-    """Test adding a movie to CSV storage."""
+    """
+    Test the add_movie method of StorageCsv.
+
+    Verifies that the movie is correctly added by:
+    - Checking if the title is in the stored movies.
+    - Asserting the rating matches the expected value.
+    """
     storage, csv_file = setup_csv_file
     movie = {"Inception": {"Year": 2010,
                            "Rating": 8.8,
@@ -57,8 +59,57 @@ def test_add_movie_csv(setup_csv_file):
     assert movies["Inception"]["Rating"] == 8.8
 
 
-def test_save_movies(setup_csv_file):
-    """Test saving movies to the CSV file."""
+def test_delete_movie_csv(setup_csv_file):
+    """
+    Test the delete_movie method of StorageCsv.
+
+    Verifies that the specified movie is removed by:
+    - Adding a movie to the CSV file.
+    - Deleting the movie by title.
+    - Checking that the title is no longer in stored movies.
+    """
+    storage, csv_file = setup_csv_file
+    movie = {"Inception": {"Year": 2010,
+                           "Rating": 8.8,
+                           "Poster": "https://m.media-amazon.com/images/example.jpg",
+                           "IMDB Link": "https://www.imdb.com/title/tt1375666/",
+                           "Notes": "Sci-fi classic"}}
+    storage.add_movie(movie)
+    storage.delete_movie("Inception")
+    movies = storage.get_movies()
+    assert "Inception" not in movies
+
+
+def test_update_movie_csv(setup_csv_file):
+    """
+    Test the update_movie method of StorageCsv.
+
+    Verifies that the specified movie is updated by:
+    - Adding a movie to the CSV file.
+    - Updating the movie's notes.
+    - Checking that the updated notes are saved correctly.
+    """
+    storage, csv_file = setup_csv_file
+    movie = {"Inception": {"Year": 2010,
+                           "Rating": 8.8,
+                           "Poster": "https://m.media-amazon.com/images/example.jpg",
+                           "IMDB Link": "https://www.imdb.com/title/tt1375666/",
+                           "Notes": "Sci-fi classic"}}
+    storage.add_movie(movie)
+    storage.update_movie("Inception", "Updated notes")
+    movies = storage.get_movies()
+    assert movies["Inception"]["Notes"] == "Updated notes"
+
+
+def test_save_and_get_movies(setup_csv_file):
+    """
+    Test the save_movies and get_movies methods of StorageCsv.
+
+    Verifies that movies are saved and retrieved accurately by:
+    - Saving a dictionary of movies.
+    - Retrieving the movies from storage.
+    - Asserting that retrieved data matches saved data.
+    """
     storage, csv_file = setup_csv_file
     movies_to_save = {
         "Inception": {
@@ -76,41 +127,14 @@ def test_save_movies(setup_csv_file):
     assert stored_movies == movies_to_save, "Saved movies do not match the expected output."
 
 
-def test_save_and_get_movies(setup_csv_file):
-    """Test saving movies and retrieving them from the CSV file."""
-    storage, csv_file = setup_csv_file
-    movies_to_save = {
-        "The Matrix": {
-            "Rating": 8.7,
-            "Year": 1999,
-            "Poster": "http://example.com/matrix.jpg",
-            "IMDB Link": "http://imdb.com/matrix",
-            "Notes": "A sci-fi classic."
-        }
-    }
-
-    storage.save_movies(movies_to_save)
-    retrieved_movies = storage.get_movies()
-
-    assert retrieved_movies == movies_to_save, "Retrieved movies do not match the saved data."
-
-
-def test_delete_movie_csv(setup_csv_file):
-    """Test deleting a movie from CSV storage."""
-    storage, csv_file = setup_csv_file
-    movie = {"Inception": {"Year": 2010,
-                           "Rating": 8.8,
-                           "Poster": "https://m.media-amazon.com/images/example.jpg",
-                           "IMDB Link": "https://www.imdb.com/title/tt1375666/",
-                           "Notes": "Sci-fi classic"}}
-    storage.add_movie(movie)
-    storage.delete_movie("Inception")
-    movies = storage.get_movies()
-    assert "Inception" not in movies
-
-
 def test_invalid_csv_format(setup_csv_file):
-    """Test handling of invalid CSV format."""
+    """
+    Test handling of invalid CSV format in get_movies.
+
+    Verifies that when the CSV file format is invalid:
+    - The method returns an empty dictionary.
+    - An error message is displayed.
+    """
     storage, csv_file = setup_csv_file
 
     # Create a malformed CSV file
