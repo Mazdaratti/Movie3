@@ -12,16 +12,33 @@ def setup_json_file(tmp_path):
         os.remove(json_file)
 
 
-def test_get_default_file(setup_json_file):
+def test_add_movie_json(setup_json_file):
+    """Test adding a movie to JSON storage."""
     storage, json_file = setup_json_file
+    movie = {"Inception": {"Rating": 8.8, "Year": 2010, "Notes": "Sci-fi classic"}}
+    storage.add_movie(movie)
     movies = storage.get_movies()
-    assert movies == {"The Matrix": {
-        "Rating": 8.7,
-        "Year": 1999,
-        "Poster": "http://example.com/matrix.jpg",
-        "IMDB Link": "http://imdb.com/matrix",
-        "Notes": "A sci-fi classic."}
-        }
+    assert "Inception" in movies
+    assert movies["Inception"]["Rating"] == 8.8
+
+
+def test_delete_movie_json(setup_json_file):
+    """Test deleting a movie from JSON storage."""
+    storage, json_file = setup_json_file
+    movie = {"Inception": {"Rating": 8.8, "Year": 2010}}
+    storage.add_movie(movie)
+    storage.delete_movie("Inception")
+    movies = storage.get_movies()
+    assert "Inception" not in movies
+
+
+def test_update_movie_json(setup_json_file):
+    storage, json_file = setup_json_file
+    movie = {"Inception": {"Rating": 8.8, "Year": 2010}}
+    storage.add_movie(movie)
+    storage.update_movie("Inception", "Updated notes")
+    movies = storage.get_movies()
+    assert movies["Inception"]["Notes"] == "Updated notes"
 
 
 def test_save_movies(setup_json_file):

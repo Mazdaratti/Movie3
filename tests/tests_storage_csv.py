@@ -29,22 +29,32 @@ def setup_csv_file(tmp_path):
         os.remove(csv_file)
 
 
-def test_get_default_file(setup_csv_file):
-    """Test loading movies from the default CSV file."""
+def test_update_movie_csv(setup_csv_file):
+    """Test updating a movie in CSV storage."""
     storage, csv_file = setup_csv_file
+    movie = {"Inception": {"Year": 2010,
+                           "Rating": 8.8,
+                           "Poster": "https://m.media-amazon.com/images/example.jpg",
+                           "IMDB Link": "https://www.imdb.com/title/tt1375666/",
+                           "Notes": "Sci-fi classic"}}
+    storage.add_movie(movie)
+    storage.update_movie("Inception", "Updated notes")
     movies = storage.get_movies()
+    assert movies["Inception"]["Notes"] == "Updated notes"
 
-    expected_movies = {
-        "The Matrix": {
-            "Rating": 8.7,
-            "Year": 1999,
-            "Poster": "http://example.com/matrix.jpg",
-            "IMDB Link": "http://imdb.com/matrix",
-            "Notes": "A sci-fi classic."
-        }
-    }
 
-    assert movies == expected_movies, "Movies loaded do not match the expected output."
+def test_add_movie_csv(setup_csv_file):
+    """Test adding a movie to CSV storage."""
+    storage, csv_file = setup_csv_file
+    movie = {"Inception": {"Year": 2010,
+                           "Rating": 8.8,
+                           "Poster": "https://m.media-amazon.com/images/example.jpg",
+                           "IMDB Link": "https://www.imdb.com/title/tt1375666/",
+                           "Notes": "Sci-fi classic"}}
+    storage.add_movie(movie)
+    movies = storage.get_movies()
+    assert "Inception" in movies
+    assert movies["Inception"]["Rating"] == 8.8
 
 
 def test_save_movies(setup_csv_file):
@@ -83,6 +93,20 @@ def test_save_and_get_movies(setup_csv_file):
     retrieved_movies = storage.get_movies()
 
     assert retrieved_movies == movies_to_save, "Retrieved movies do not match the saved data."
+
+
+def test_delete_movie_csv(setup_csv_file):
+    """Test deleting a movie from CSV storage."""
+    storage, csv_file = setup_csv_file
+    movie = {"Inception": {"Year": 2010,
+                           "Rating": 8.8,
+                           "Poster": "https://m.media-amazon.com/images/example.jpg",
+                           "IMDB Link": "https://www.imdb.com/title/tt1375666/",
+                           "Notes": "Sci-fi classic"}}
+    storage.add_movie(movie)
+    storage.delete_movie("Inception")
+    movies = storage.get_movies()
+    assert "Inception" not in movies
 
 
 def test_invalid_csv_format(setup_csv_file):
