@@ -1,0 +1,51 @@
+{
+    "12 Angry Men": {
+        "Year": 1957,
+        "Rating": 9.0,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYjE4NzdmOTYtYjc5Yi00YzBiLWEzNDEtNTgxZGQ2MWVkN2NiXkEyXkFqcGc@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0050083/",
+        "Notes": ""
+    },
+    "Pulp Fiction": {
+        "Year": 1994,
+        "Rating": 8.9,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0110912/",
+        "Notes": "Best ever!"
+    },
+    "Forrest Gump": {
+        "Year": 1994,
+        "Rating": 8.8,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNDYwNzVjMTItZmU5YS00YjQ5LTljYjgtMjY2NDVmYWMyNWFmXkEyXkFqcGc@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0109830/",
+        "Notes": ""
+    },
+    "The Matrix": {
+        "Year": 1999,
+        "Rating": 8.7,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0133093/",
+        "Notes": ""
+    },
+    "Interstellar": {
+        "Year": 2014,
+        "Rating": 8.7,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0816692/",
+        "Notes": ""
+    },
+    "The Silence of the Lambs": {
+        "Year": 1991,
+        "Rating": 8.6,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0102926/",
+        "Notes": "Great movie!!!"
+    },
+    "Se7en": {
+        "Year": 1995,
+        "Rating": 8.6,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BY2IzNzMxZjctZjUxZi00YzAxLTk3ZjMtODFjODdhMDU5NDM1XkEyXkFqcGc@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0114369/",
+        "Notes": ""
+    }
+}
