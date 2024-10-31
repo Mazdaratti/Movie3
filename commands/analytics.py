@@ -3,6 +3,7 @@ import difflib
 import random
 from storage.istorage import IStorage
 
+
 class Analytics:
     """
         Provides analytical tools for a movie database.
@@ -12,7 +13,7 @@ class Analytics:
         by rating or release year, and filter movies based on user-specified criteria.
 
         Attributes:
-            movies (object): A data source for movie information, typically implementing
+            movies_data (object): A data source for movie information, typically implementing
                              a 'get_movies()' method to retrieve a dictionary of movies.
 
         Methods:
@@ -26,6 +27,7 @@ class Analytics:
             get_valid_input(prompt, category): Prompts user for valid numerical input with validation.
             filtered_movies(): Filters and displays movies based on minimum rating and year range.
     """
+
     def __init__(self, movies_data: IStorage):
         """
             Initializes the Analytics instance with a given movie data source.
