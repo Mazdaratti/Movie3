@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from storage.istorage import IStorage
 
 
 class WebGenerator:
@@ -16,12 +17,12 @@ class WebGenerator:
     new_index_path = os.path.join(project_dir,
                                   "_static", "index.html")
 
-    def __init__(self, movies_data, new_path=new_index_path):
+    def __init__(self, movies_data: IStorage, new_path=new_index_path):
         """
             Initialize the WebGenerator with movie data and an output path.
 
             Args:
-                movies_data: The data containing movie information.
+                movies_data (object): The data containing movie information.
                 new_path (str, optional): The path to save the generated HTML file.
                                           Defaults to `new_index_path`.
         """
