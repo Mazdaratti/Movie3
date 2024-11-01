@@ -1,8 +1,7 @@
 import os
 import sys
 from pathlib import Path
-from storage.storage_csv import StorageCsv
-from storage.storage_json import StorageJson
+from storage import init_storage, is_valid_path
 from movie_app import MovieApp
 
 
@@ -27,12 +26,11 @@ def get_storage_arg():
     if len(sys.argv) <= 1:
         return default_path
     storage = sys.argv[1]
-    if storage.endswith(".csv") or storage.endswith(".json"):
-        full_path = os.path.join(ROOT_PATH, "data", storage)
-    else:
-        print("Wrong file input, sets default storage.")
-        full_path = default_path
-    return full_path
+    full_path = os.path.join(ROOT_PATH, "data", storage)
+    if is_valid_path(storage):
+        return full_path
+    print("Wrong file input, sets default storage.")
+    return default_path
 
 
 def main():
@@ -45,14 +43,10 @@ def main():
         application.
     """
     storage_path = get_storage_arg()
-    if storage_path.endswith(".csv"):
-        storage = StorageCsv(storage_path)
-    else:
-        storage = StorageJson(storage_path)
+    storage = init_storage(storage_path)
     movie_app = MovieApp(storage)
     movie_app.run()
 
 
 if __name__ == '__main__':
     main()
-
