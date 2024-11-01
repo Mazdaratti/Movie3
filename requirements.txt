@@ -1,4 +1,6 @@
 requests
 python-dotenv
 pandas
+pylint
+pytest
 
