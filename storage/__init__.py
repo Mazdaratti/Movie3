@@ -4,7 +4,7 @@ from .storage_json import StorageJson
 
 STORAGE_LOADERS = {
     '.csv': StorageCsv,
-    '.json.': StorageJson
+    '.json': StorageJson
 }
 
 
@@ -13,7 +13,7 @@ def init_storage(path):
     """
         Initializes the storage handler based on the file extension.
     """
-    return STORAGE_LOADERS[Path(path).suffix](path)
+    return STORAGE_LOADERS.get(Path(path).suffix)(path)
 
 
 def is_valid_path(storage_path):
