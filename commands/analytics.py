@@ -24,7 +24,8 @@ class Analytics:
             print_movies(sorted_movies): Prints a list of sorted movies.
             sorted_by_rating(): Sorts and displays movies by rating in descending order.
             sorted_by_year(): Sorts and displays movies by release year based on user preference.
-            get_valid_input(prompt, category): Prompts user for valid numerical input with validation.
+            get_valid_input(prompt, category): Prompts user for valid numerical input with
+                                               validation.
             filtered_movies(): Filters and displays movies based on minimum rating and year range.
     """
 
@@ -195,7 +196,8 @@ class Analytics:
             float or None: The validated numerical value, or None if the input is left blank.
 
         Raises:
-            ValueError: If the input is not a valid number or does not meet category-based validation rules.
+            ValueError: If the input is not a valid number or does not meet category-based
+                        validation rules.
         """
         while True:
             user_input = input(prompt).strip()
@@ -211,14 +213,17 @@ class Analytics:
 
     def filtered_movies(self):
         """
-        Filters and displays movies based on user-specified criteria for minimum rating, start year, and end year.
+        Filters and displays movies based on user-specified criteria for minimum rating,
+        start year, and end year.
 
-        Prompts the user to input a minimum rating, start year, and end year. These inputs are validated as follows:
+        Prompts the user to input a minimum rating, start year, and end year.
+        These inputs are validated as follows:
         - Rating must be a positive float or integer.
         - Year must be a positive integer (no decimals).
         If the user leaves a field blank, that criterion is ignored (no filter applied).
 
-        After filtering, the function displays the movies that match the criteria or a message if no matches are found.
+        After filtering, the function displays the movies that match the criteria or a
+        message if no matches are found.
 
         Output:
             - Prints the filtered list of movies or a message if no matches are found.
@@ -228,14 +233,20 @@ class Analytics:
             print("No movies available.")
             return
 
-        start_rating = self.get_valid_input("Enter minimum rating (leave blank for no minimum rating): ", "rating")
-        start_year = self.get_valid_input("Enter start year (leave blank for no start year): ", "year")
-        end_year = self.get_valid_input("Enter end year (leave blank for no end year): ", "year")
+        start_rating = self.get_valid_input(
+            "Enter minimum rating (leave blank for no minimum rating): ",
+            "rating")
+        start_year = self.get_valid_input(
+            "Enter start year (leave blank for no start year): ", "year")
+        end_year = self.get_valid_input(
+            "Enter end year (leave blank for no end year): ", "year")
 
-        filtered_movie_list = [(title, details) for title, details in movies.items()
-                               if (start_rating is None or float(details["Rating"]) >= start_rating) and
-                               (start_year is None or int(details["Year"]) >= start_year) and
-                               (end_year is None or int(details["Year"]) <= end_year)
-                               ]
+        filtered_movie_list = [
+            (title, details) for title, details in movies.items()
+            if (start_rating is None or float(details["Rating"]) >= start_rating) and
+            (start_year is None or int(details["Year"]) >= start_year) and
+            (end_year is None or int(details["Year"]) <= end_year)
+        ]
 
-        self.print_movies(filtered_movie_list) if filtered_movie_list else print("No movies match for given criteria.")
+        self.print_movies(filtered_movie_list) if filtered_movie_list else (
+            print("No movies match for given criteria."))
