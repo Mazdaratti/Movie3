@@ -38,7 +38,8 @@ class MovieInfoDownloader:
             Initialize the MovieInfoDownloader with an API URL and key.
 
             Args:
-                api_url (str, optional): API URL for fetching movie information. Defaults to OMDb API.
+                api_url (str, optional): API URL for fetching movie information.
+                                         Defaults to OMDb API.
         """
         self._api_url = api_url or "http://www.omdbapi.com/"
         self._api_key = load_api_key()
