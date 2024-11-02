@@ -4,6 +4,8 @@ import pytest
 from storage.storage_csv import StorageCsv
 
 
+# Disable Pylint warning for redefined-outer-name specifically for the setup_csv_file fixture
+# pylint: disable=redefined-outer-name
 @pytest.fixture
 def setup_csv_file(tmp_path):
     """
@@ -22,7 +24,8 @@ def setup_csv_file(tmp_path):
 
     # Create a default CSV file with a test entry
     with open(csv_file, "w", newline='', encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=['Title', 'Rating', 'Year', 'Poster', 'IMDB Link', 'Notes'])
+        writer = csv.DictWriter(file, fieldnames=[
+            'Title', 'Rating', 'Year', 'Poster', 'IMDB Link', 'Notes'])
         writer.writeheader()
         writer.writerow({
             'Title': 'The Matrix',
@@ -47,7 +50,7 @@ def test_add_movie_csv(setup_csv_file):
     - Checking if the title is in the stored movies.
     - Asserting the rating matches the expected value.
     """
-    storage, csv_file = setup_csv_file
+    storage, _ = setup_csv_file
     movie = {"Inception": {"Year": 2010,
                            "Rating": 8.8,
                            "Poster": "https://m.media-amazon.com/images/example.jpg",
@@ -68,7 +71,7 @@ def test_delete_movie_csv(setup_csv_file):
     - Deleting the movie by title.
     - Checking that the title is no longer in stored movies.
     """
-    storage, csv_file = setup_csv_file
+    storage, _ = setup_csv_file
     movie = {"Inception": {"Year": 2010,
                            "Rating": 8.8,
                            "Poster": "https://m.media-amazon.com/images/example.jpg",
@@ -89,7 +92,7 @@ def test_update_movie_csv(setup_csv_file):
     - Updating the movie's notes.
     - Checking that the updated notes are saved correctly.
     """
-    storage, csv_file = setup_csv_file
+    storage, _ = setup_csv_file
     movie = {"Inception": {"Year": 2010,
                            "Rating": 8.8,
                            "Poster": "https://m.media-amazon.com/images/example.jpg",
@@ -110,7 +113,7 @@ def test_save_and_get_movies(setup_csv_file):
     - Retrieving the movies from storage.
     - Asserting that retrieved data matches saved data.
     """
-    storage, csv_file = setup_csv_file
+    storage, _ = setup_csv_file
     movies_to_save = {
         "Inception": {
             "Rating": 8.8,

@@ -3,6 +3,8 @@ import pytest
 from storage.storage_json import StorageJson
 
 
+# Disable Pylint warning for redefined-outer-name specifically for the setup_json_file fixture
+# pylint: disable=redefined-outer-name
 @pytest.fixture
 def setup_json_file(tmp_path):
     """
@@ -30,7 +32,7 @@ def test_add_movie_json(setup_json_file):
     - The title is present in the stored movies.
     - The rating matches the added data.
     """
-    storage, json_file = setup_json_file
+    storage, _ = setup_json_file
     movie = {"Inception": {"Rating": 8.8, "Year": 2010, "Notes": "Sci-fi classic"}}
     storage.add_movie(movie)
     movies = storage.get_movies()
@@ -47,7 +49,7 @@ def test_delete_movie_json(setup_json_file):
     - Deleting the movie by title.
     - Checking that the title is no longer in stored movies.
     """
-    storage, json_file = setup_json_file
+    storage, _ = setup_json_file
     movie = {"Inception": {"Rating": 8.8, "Year": 2010}}
     storage.add_movie(movie)
     storage.delete_movie("Inception")
@@ -64,7 +66,7 @@ def test_update_movie_json(setup_json_file):
     - Updating the movie's notes.
     - Checking that the updated notes are saved correctly.
     """
-    storage, json_file = setup_json_file
+    storage, _ = setup_json_file
     movie = {"Inception": {"Rating": 8.8, "Year": 2010}}
     storage.add_movie(movie)
     storage.update_movie("Inception", "Updated notes")
@@ -81,7 +83,7 @@ def test_save_and_get_movies(setup_json_file):
     - Retrieving the movies from storage.
     - Asserting that retrieved data matches saved data.
     """
-    storage, json_file = setup_json_file
+    storage, _ = setup_json_file
     movies_to_save = {
         "The Matrix": {
             "Rating": 8.7,
@@ -108,7 +110,7 @@ def test_invalid_json_format(setup_json_file):
     storage, json_file = setup_json_file
 
     # Create a malformed JSON file
-    with open(json_file, "w") as f:
+    with open(json_file, "w", encoding="utf-8") as f:
         f.write("This is not a valid JSON")
 
     movies = storage.get_movies()
