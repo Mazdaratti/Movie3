@@ -1,6 +1,6 @@
 import csv
-import pandas as pd
 import os
+import pandas as pd
 from storage.istorage import IStorage
 
 
@@ -68,5 +68,3 @@ class StorageCsv(IStorage):
         df = pd.DataFrame(movies_list)
         # Save to CSV
         df.to_csv(self._database, index=False)
-
-

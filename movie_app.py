@@ -2,6 +2,7 @@ import sys
 from commands.analytics import Analytics
 from commands.crud import Crud
 from commands.web_generator import WebGenerator
+from storage.istorage import IStorage
 
 
 class MovieApp:
@@ -29,7 +30,7 @@ class MovieApp:
             run(): Starts the application loop, displaying the menu and executing the chosen commands.
     """
 
-    def __init__(self, storage):
+    def __init__(self, storage: IStorage):
         """
             Initializes the MovieApp instance with provided storage and sets up dependencies.
 

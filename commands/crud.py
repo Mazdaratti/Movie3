@@ -1,4 +1,5 @@
 from commands.downloader import MovieInfoDownloader
+from storage.istorage import IStorage
 
 
 class Crud:
@@ -10,7 +11,7 @@ class Crud:
         validation and checks if a movie exists in the database.
 
         Attributes:
-            movies (object): A data source for movie information, implementing methods
+            movies_data (IStorage): A data source for movie information, implementing methods
                              like 'get_movies()', 'add_movie()', 'delete_movie()', and 'update_movie()'.
 
         Methods:
@@ -22,7 +23,7 @@ class Crud:
             delete_movie(): Deletes a movie from the database if it exists.
             update_movie(): Updates a movie with a personal note if it exists in the database.
     """
-    def __init__(self, movies_data):
+    def __init__(self, movies_data: IStorage):
         """
             Initializes the Crud instance with a movie data source.
 
