@@ -16,7 +16,6 @@ class IStorage(ABC):
             Returns:
                 dict: A dictionary containing movie data.
         """
-        pass
 
     @abstractmethod
     def save_movies(self, dict_object: dict):
@@ -26,7 +25,6 @@ class IStorage(ABC):
             Args:
                 dict_object (dict): The dictionary object containing movie data to be saved.
         """
-        pass
 
     def add_movie(self, movie: dict):
         """
