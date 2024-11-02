@@ -11,23 +11,28 @@ class MovieApp:
         for CRUD operations, analytics, and web generation.
 
         This class serves as the main entry point for interacting with a movie database,
-        supporting operations to list, add, delete, and update movies, as well as analytics functions
-        like statistics, sorting, filtering, and generating a website view of the movie database.
+        supporting operations to list, add, delete, and update movies, as well as analytics
+        functions like statistics, sorting, filtering, and generating a website view of the
+        movie database.
 
         Attributes:
-            _storage (object): An object that interfaces with the movie database storage, such as
-                               a JSON or database file.
-            _crud (Crud): An instance of the Crud class for handling create, read, update, and delete operations.
-            _analytics (Analytics): An instance of the Analytics class for data analysis and statistics.
-            _webgenerator (WebGenerator): An instance of the WebGenerator class for generating a website.
-            menu_entries (list): A list of tuples, each containing a description and a function reference for
-                                 menu options available to the user.
+            _storage (object): An object that interfaces with the movie database storage,
+                               such as a JSON or database file.
+            _crud (Crud): An instance of the Crud class for handling create, read, update,
+                          and delete operations.
+            _analytics (Analytics): An instance of the Analytics class for data analysis
+                                    and statistics.
+            _webgenerator (WebGenerator): An instance of the WebGenerator class for
+            generating a website.
+            menu_entries (list): A list of tuples, each containing a description and a
+                                function reference for menu options available to the user.
 
         Methods:
             exit_command(): Terminates the application.
             display_menu(): Prints the available menu options.
             get_user_choice(): Prompts the user for a menu selection and validates the input.
-            run(): Starts the application loop, displaying the menu and executing the chosen commands.
+            run(): Starts the application loop, displaying the menu and executing the chosen
+                   commands.
     """
 
     def __init__(self, storage: IStorage):
@@ -35,7 +40,8 @@ class MovieApp:
             Initializes the MovieApp instance with provided storage and sets up dependencies.
 
             Args:
-                storage (object): The storage backend for the movie database, providing methods to manage movies.
+                storage (object): The storage backend for the movie database, providing methods
+                to manage movies.
         """
         self._storage = storage
         self._crud = Crud(self._storage)
@@ -102,7 +108,8 @@ class MovieApp:
 
     def run(self):
         """
-            Starts the main loop of the movie app, displaying the menu and executing selected commands.
+            Starts the main loop of the movie app, displaying the menu and executing selected
+            commands.
 
             This method continuously displays the menu, prompts the user for a choice, and executes
             the corresponding function until the user selects "Exit." After each action, it pauses
