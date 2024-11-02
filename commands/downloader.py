@@ -1,6 +1,6 @@
+import os
 import requests
 from dotenv import load_dotenv
-import os
 from requests.exceptions import HTTPError, ConnectionError, Timeout, RequestException
 
 
@@ -23,7 +23,6 @@ def load_api_key() -> str:
 
 class APIError(Exception):
     """Custom exception for handling API-related errors."""
-    pass
 
 
 class MovieInfoDownloader:
@@ -85,8 +84,8 @@ class MovieInfoDownloader:
                     }
 
         except (HTTPError, ConnectionError, Timeout) as req_err:
-            raise APIError(f"Request error occurred: {req_err}")
+            raise APIError(f"Request error occurred: {req_err}") from req_err
         except ValueError as json_err:
-            raise APIError(f"Error parsing JSON: {json_err}")
+            raise APIError(f"Error parsing JSON: {json_err}") from json_err
         except RequestException as err:
-            raise APIError(f"Error fetching movie info: {err}")
+            raise APIError(f"Error fetching movie info: {err}") from err

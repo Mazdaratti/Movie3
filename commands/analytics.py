@@ -248,5 +248,7 @@ class Analytics:
             (end_year is None or int(details["Year"]) <= end_year)
         ]
 
-        self.print_movies(filtered_movie_list) if filtered_movie_list else (
-            print("No movies match for given criteria."))
+        if filtered_movie_list:
+            self.print_movies(filtered_movie_list)
+        else:
+            print('No movies match for given criteria.')
