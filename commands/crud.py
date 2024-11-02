@@ -11,7 +11,7 @@ class Crud:
         validation and checks if a movie exists in the database.
 
         Attributes:
-            movies_data (object): A data source for movie information, implementing methods
+            movies_data (IStorage): A data source for movie information, implementing methods
                              like 'get_movies()', 'add_movie()', 'delete_movie()', and 'update_movie()'.
 
         Methods:

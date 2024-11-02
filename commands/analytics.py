@@ -13,7 +13,7 @@ class Analytics:
         by rating or release year, and filter movies based on user-specified criteria.
 
         Attributes:
-            movies_data (object): A data source for movie information, typically implementing
+            movies_data (IStorage): A data source for movie information, typically implementing
                              a 'get_movies()' method to retrieve a dictionary of movies.
 
         Methods:

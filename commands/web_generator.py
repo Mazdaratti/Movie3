@@ -22,7 +22,7 @@ class WebGenerator:
             Initialize the WebGenerator with movie data and an output path.
 
             Args:
-                movies_data (object): The data containing movie information.
+                movies_data (IStorage): The data containing movie information.
                 new_path (str, optional): The path to save the generated HTML file.
                                           Defaults to `new_index_path`.
         """
