@@ -1,12 +1,7 @@
-import os
 import sys
-from pathlib import Path
 from storage import init_storage, is_valid_path
 from data import DEFAULT_PATH, get_data_path
 from movie_app import MovieApp
-
-
-ROOT_PATH = Path(__file__).parent
 
 
 def get_storage_arg():
