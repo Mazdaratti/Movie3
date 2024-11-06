@@ -66,8 +66,8 @@ class WebGenerator:
                 if not content:
                     raise ValueError(f"Error: The file '{path}' is empty.")
                 return content
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Error: The file '{path}' was not found.")
+        except FileNotFoundError as exc:
+            raise FileNotFoundError(f"Error: The file '{path}' was not found.") from exc
 
     def serialize_movies(self) -> str:
         """

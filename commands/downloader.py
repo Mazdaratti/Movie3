@@ -1,6 +1,6 @@
+import os
 import requests
 from dotenv import load_dotenv
-import os
 from requests.exceptions import HTTPError, ConnectionError, Timeout, RequestException
 
 
@@ -23,7 +23,6 @@ def load_api_key() -> str:
 
 class APIError(Exception):
     """Custom exception for handling API-related errors."""
-    pass
 
 
 class MovieInfoDownloader:
@@ -39,7 +38,8 @@ class MovieInfoDownloader:
             Initialize the MovieInfoDownloader with an API URL and key.
 
             Args:
-                api_url (str, optional): API URL for fetching movie information. Defaults to OMDb API.
+                api_url (str, optional): API URL for fetching movie information.
+                                         Defaults to OMDb API.
         """
         self._api_url = api_url or "http://www.omdbapi.com/"
         self._api_key = load_api_key()
@@ -85,8 +85,8 @@ class MovieInfoDownloader:
                     }
 
         except (HTTPError, ConnectionError, Timeout) as req_err:
-            raise APIError(f"Request error occurred: {req_err}")
+            raise APIError(f"Request error occurred: {req_err}") from req_err
         except ValueError as json_err:
-            raise APIError(f"Error parsing JSON: {json_err}")
+            raise APIError(f"Error parsing JSON: {json_err}") from json_err
         except RequestException as err:
-            raise APIError(f"Error fetching movie info: {err}")
+            raise APIError(f"Error fetching movie info: {err}") from err

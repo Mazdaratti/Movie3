@@ -12,12 +12,13 @@ class Crud:
 
         Attributes:
             movies_data (IStorage): A data source for movie information, implementing methods
-                             like 'get_movies()', 'add_movie()', 'delete_movie()', and 'update_movie()'.
+                        like 'get_movies()', 'add_movie()', 'delete_movie()', and 'update_movie()'.
 
         Methods:
             list_movies(): Lists all movies in the database with their release years and ratings.
             get_num(prompt, category): Prompts the user for a numerical value and validates it.
-            is_movie_in_dict(name): Checks if a movie title exists in the database (case-insensitive).
+            is_movie_in_dict(name): Checks if a movie title exists in the database
+                                    (case-insensitive).
             get_new_title(): Prompts the user for a new movie title and ensures it is unique.
             add_movie(): Adds a new movie to the database with a specified title, year, and rating.
             delete_movie(): Deletes a movie from the database if it exists.
@@ -74,8 +75,7 @@ class Crud:
                 user_input_float = float(user_input)
                 if user_input_float < 0 or (category == "Year" and "." in user_input):
                     raise ValueError
-                else:
-                    return user_input_float
+                return user_input_float
             except ValueError:
                 print(f"Please enter a valid {category}")
 
@@ -87,7 +87,8 @@ class Crud:
                 name (str): The movie title to check.
 
             Returns:
-                bool: True if the movie title exists in the dictionary (case-insensitive), False otherwise.
+                bool: True if the movie title exists in the dictionary (case-insensitive),
+                      False otherwise.
         """
         movies = self.movies.get_movies()
         return name.lower() in map(lambda key: key.lower(), movies.keys())
@@ -105,7 +106,7 @@ class Crud:
                 print("Movie name must not be empty.")
             elif self.is_movie_in_dict(new_title):
                 print(f"Movie '{new_title}' already exists!")
-                return
+                return None
             else:
                 return new_title
 
@@ -120,7 +121,6 @@ class Crud:
           Returns:
               None: Exits early if the movie already exists.
           """
-        movies = self.movies.get_movies()
         new_name = self.get_new_title()
         if not new_name:
             return

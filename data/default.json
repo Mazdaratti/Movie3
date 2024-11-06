@@ -173,5 +173,12 @@
         "Poster": "https://m.media-amazon.com/images/M/MV5BYjY4NGI5OTUtY2ZlZS00Zjk4LTk5N2MtN2JmYWVjNGNmMGRlXkEyXkFqcGc@._V1_SX300.jpg",
         "IMDB Link": "https://www.imdb.com/title/tt0317248/",
         "Notes": ""
+    },
+    "Pretty Woman": {
+        "Year": 1990,
+        "Rating": 7.1,
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNjk2ODQzNDYxNV5BMl5BanBnXkFtZTgwMTcyNDg4NjE@._V1_SX300.jpg",
+        "IMDB Link": "https://www.imdb.com/title/tt0100405/",
+        "Notes": ""
     }
 }
